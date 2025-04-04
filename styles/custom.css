@@ -8,6 +8,12 @@
     font-size: 12px;
 }
 
+/* Mobile-first touch targets */
+button, a, input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+}
+
 .lottery-box {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -36,13 +42,30 @@
     animation: fadeIn 0.2s ease-out;
 }
 
+/* Mobile optimizations */
+@media (pointer: coarse) {
+    /* Larger touch targets for mobile */
+    .nav-item {
+        padding: 12px !important;
+    }
+    
+    input, select, textarea {
+        font-size: 16px !important; /* Prevent zooming on focus */
+    }
+}
+
 /* Responsive adjustments */
 @media (max-width: 640px) {
     .lottery-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .auth-container {
-        padding: 1.5rem;
+        padding: 1rem;
+    }
+
+    .form-input {
+        padding: 0.75rem;
     }
 }
