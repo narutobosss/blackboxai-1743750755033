@@ -1,0 +1,48 @@
+/* Custom styles that override or extend Tailwind */
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+}
+
+.lottery-box {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lottery-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.password-toggle {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: #4b5563;
+}
+
+/* Animation for notification popup */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.notification-popup {
+    animation: fadeIn 0.2s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .lottery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .auth-container {
+        padding: 1.5rem;
+    }
+}
